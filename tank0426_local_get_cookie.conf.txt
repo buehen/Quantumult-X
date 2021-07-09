@@ -1,0 +1,405 @@
+#Cookie获取订阅
+#适用于WorkingCopy本地挂载
+#Cookie获取成功后在重写里禁用掉本订阅
+#Cookie失效时在重写里启用本订阅
+
+#订阅地址(https://gitee.com/buehen/QuantumultX/raw/master/buehen0426_Get_Cookie_New.conf)
+
+hostname = wapside.189.cn, *.acfun.cn, apk.tw, *.bilibili.com, api.dongqiudi.com, *.feng.com, www.flyertea.com, music.163.com, *.m.163.com, user.qunar.com, *.rr.tv, sf-integral-sign-in.weixinjia.net, mcs-mimp-web.sf-express.com, *.smzdm.com, tieba.baidu.com, *.v2ex.com, *.video.qq.com, mobwsa.ximalaya.com, *.you.163.com, *.rrys2020.com, ios.zmzapi.com, *.csdn.net, m.gdoil.cn, credits.bz.mgtv.com, api-takumi.mihoyo.com, m.client.10010.com, act.10010.com, wx.10086.cn, promotion.waimai.meituan.com, i.meituan.com, api.everphoto.cn, group.baicizhan.com, maicai.api.ddxq.mobi, pm.m.fenqile.com, api.dushu.io,  node.kg.qq.com, wxprdapplet.gac-nio.com, app.nio.com, daojia.jd.com, m-bean.kaola.com, zt.wps.cn, m.ctrip.com, luckman.suning.com, passport.suning.com, sign.suning.com, gameapi.suning.com, frodo.douban.com, api.1sapp.com, apiwz.midukanshu.com, api.m.jd.com, ifac*.iqiyi.com, c.tieba.baidu.com, www.52pojie.cn, passport.biligame.com, api.kkmh.com, as.xiaojukeji.com, common.diditaxi.com.cn, dominos*.shjimang.com, dominos0724.shjimang.com, superapp.kiwa-tech.com, activity-1.m.duiba.com.cn, frodo.douban.com, webapi.qmai.cn, mall.oclean.com, m.weibo.cn, teacherapi.zmlearn.com, h5.ele.me, api.xiaoheihe.cn, cloud.umetrip.com, mk.immomo.com, mobile01.91quzou.com, www.2xtj7.cn, www.baimaa.com, www.hnmiaosu.cc, ph0001.hezyq.com, wq.02gk.com, dk.ne72.com, m.client.10010.com, m.weibo.cn, appv8.qukantianxia.com, appv7.qukantx.com, app*.jegotrip.com.cn, task.jegotrip.com.cn, , api.umer.com.cn, h5.ele.me, api.tuhu.cn, youhui.95516.com, qqpet.jwetech.com, proxy.vac.qq.com, club.yili.com, cxdng.cpic.com.cn, huiyuan.163.com, geekhub.com, www.geekhub.com, api.weibo.cn, mapi.weibo.com, h5.youzan.com, wxavip-up.ezrpro.cn, apiplus.biyao.com, m.xiaomiyoupin.com, app.ymatou.com, exp.angelalign.com, ngabbs.com, m.ctrp.com, *.ctrp.com, m.elong.com, activity.m.duiba.com.cn, icbc1.wlphp.com:8444, api.m.jd.com, wx.17u.cn, api.gaoqingdianshi.com, daojia.jd.com, draw.jdfcloud.com, nebula.kuaishou.com, www.mydigit.cn, newsapi.sina.cn, e.189.cn, api.inews.qq.com, api.weibo.cn, pay.sc.weibo.com, ios.baertt.com, www.xiaodouzhuan.cn, weather-data.apple.com, api.weather.com, commontgw6.reader.qq.com, eventv3.reader.qq.com, wox2019.woxshare.com, jdread-api.jd.com, appsmall.rtmap.com, mobile.app.autohome.com.cn, choujiang-server.deering.cn, api.sdbao.com, app.oscaches.com, operation-api.jimistore.com, api.momosyb.com, hongbao.youzikuaibao.com, *.zhuishushenqi.com, getconfig-globalapi.zymk.cn,newactivity.huazhu.com, 
+
+
+# 电信营业厅 cookie
+^https:\/\/wapside.189.cn:9001\/api\/home\/sign url script-request-body chavyleung/10000/10000.cookie.js
+
+# AcFun cookie
+^https:\/\/api\-new\.app\.acfun\.cn\/rest\/app\/user\/personalInfo url script-request-header chavyleung/acfun/acfun.cookie.js
+
+# APK.TW cookie
+^https://apk.tw\/member.php(.*?)action=login url script-request-body chavyleung/apktw/apktw.cookie.js
+
+# bilibili cookie
+^https:\/\/(www|live)\.bilibili\.com\/?.? url script-request-header chavyleung/bilibili/bilibili.cookie.js
+
+# 懂球帝 cookie
+^https:\/\/api\.dongqiudi\.com\/v2\/user\/is_login url script-request-header chavyleung/dongqiudi/dongqiudi.cookie.js
+
+# 威锋网 cookie
+# ^https:\/\/(www\.)?feng\.com\/?.? url script-request-header chavyleung/feng/feng.cookie.js
+
+# 飞客茶馆 cookie
+^https:\/\/www\.flyertea\.com\/source\/plugin\/mobile\/mobile\.php\?module=getdata&.* url script-request-header chavyleung/flyertea/flyertea.cookie.js
+
+# 网易云音乐 cookie
+^https:\/\/music.163.com\/weapi\/user\/level url script-request-body chavyleung/neteasemusic/quanx/neteasemusic.cookie.js
+
+# 网易新闻 cookie
+^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body chavyleung/neteasenews/neteasenews.cookie.js
+
+# 去哪儿 cookie
+^https:\/\/user.qunar.com\/webapi\/member\/signIndexV2.htm url script-request-header chavyleung/qunar/qunar.cookie.js
+
+# 人人视频 cookie
+^https:\/\/api\.rr\.tv\/user\/profile url script-request-header chavyleung/rrtv/rrtv.cookie.js
+
+# 顺丰速运 cookie
+^https:\/\/sf-integral-sign-in.weixinjia.net\/app\/index url script-request-header chavyleung/sfexpress/sfexpress.cookie.js
+^https:\/\/mcs-mimp-web.sf-express.com\/mcs-mimp\/share\/(.*?)Redirect url script-request-header chavyleung/sfexpress/sfexpress.cookie.js
+
+# 什么值得买 cookie
+^https:\/\/www\.smzdm\.com\/?.? url script-request-header chavyleung/smzdm/quanx/smzdm.cookie.js
+
+# 百度签到 cookie
+^https?:\/\/tieba\.baidu\.com\/?.? url script-request-header chavyleung/tieba/tieba.cookie.js
+
+# V2EX cookie
+^https:\/\/www\.v2ex\.com\/mission\/daily url script-request-header chavyleung/v2ex/quanx/v2ex.cookie.js
+
+# 腾讯视频 cookie
+^https:\/\/access.video.qq.com\/user\/auth_refresh url script-request-header chavyleung/videoqq/videoqq.cookie.js
+
+# 喜马拉雅 cookie
+^https?:\/\/.*\/mobile\-user\/homePage\/.* url script-request-header chavyleung/ximalaya/ximalaya.cookie.js
+
+# 网易严选 cookie
+# ^https:\/\/m\.you\.163\.com\/xhr\/points\/index\.json url script-request-header chavyleung/yanxuan/yanxuan.cookie.js
+
+# 字幕组 cookie
+^https?:\/\/(www\.)?rrys2020\.com\/?.? url script-request-header chavyleung/zimuzu/zimuzu.cookie.js
+^http:\/\/ios.zmzapi.com\/index.php.*a=(mobile_)?login url script-request-header chavyleung/zimuzu/zimuzu.cookie.js
+
+# CSDN cookie
+^https:\/\/passport.csdn.net\/v2\/api\/app\/login\/checkAndRefreshToken url script-request-header chavyleung/csdn/csdn.cookie.js
+^https:\/\/gw.csdn.net\/mini-app\/v2\/lucky_draw\/login\/sign_in\? url script-request-header chavyleung/csdn/csdn.cookie.js
+
+# 加油广东 cookie
+^https:\/\/m.gdoil.cn\/webapi\/usersign\/addusersign url script-request-header chavyleung/gdoil/gdoil.cookie.js
+
+# 芒果TV cookie
+^https:\/\/credits.bz.mgtv.com\/user\/creditsTake url script-request-header chavyleung/mgtv/mgtv.cookie.js
+
+# 米游社 cookie
+^https:\/\/api-takumi.mihoyo.com\/apihub\/api\/getGameList url script-request-header chavyleung/mihoyo/mihoyo.cookie.js
+
+# 中国联通 cookie
+^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm url script-request-header chavyleung/10010/10010.cookie.js
+^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign url script-request-header chavyleung/10010/10010.cookie.js
+^https:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo) url script-request-header chavyleung/10010/10010.cookie.js
+
+# 猫咪音乐网 cookie
+https:\/\/www.maomicd.com\/plugin.php\?id=k_misign:sign&operation=qiandao url script-request-header chavyleung/maomicd/maomicd.cookie.js
+
+# 中国移动 cookie
+^http:\/\/wx.10086.cn\/website\/taskCenter\/index\? url script-request-header chavyleung/10086/10086.cookie.js
+^http:\/\/wx.10086.cn\/website\/taskCenter\/sign\? url script-request-header chavyleung/10086/10086.cookie.js
+
+# 美团外卖 cookie
+^https:\/\/promotion.waimai.meituan.com\/playcenter\/signIn\/entry url script-request-header chavyleung/wmmeituan/wmmeituan.cookie.js
+^https:\/\/promotion.waimai.meituan.com\/playcenter\/signIn\/doaction url script-request-body chavyleung/wmmeituan/wmmeituan.cookie.js
+
+# 美团 cookie
+^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ url script-request-body chavyleung/meituan/meituan.cookie.js
+
+# 时光相册 cookie
+^https:\/\/api.everphoto.cn\/users\/self\/checkin\/v2 url script-request-header chavyleung/everphoto/everphoto.cookie.js
+
+# 百词斩 cookie
+^https://group\.baicizhan\.com/group/rewards? url script-request-header chavyleung/bcz/bcz.cookie.js
+
+# 叮咚买菜 cookie
+^https:\/\/maicai.api.ddxq.mobi\/point\/home url script-request-header chavyleung/mcdd/mcdd.cookie.js
+
+# 分期乐 cookie
+^https://pm\.m\.fenqile\.com/route0014/star/sign/sign.json url script-request-body chavyleung/fenqile/fenqile.cookie.js
+^https:\/\/pm\.m\.fenqile\.com/route0014\/app\/tab\/privilege\/convertTaskReward.json url script-request-body chavyleung/fenqile/fenqile.cookie.js
+
+# 樊登读书 cookie
+^https://api\.dushu\.io/CheckIn url script-request-body chavyleung/fandeng/fandeng.cookie.js
+
+# 全民K歌 cookie
+^https://node\.kg\.qq\.com/webapp/proxy? url script-request-body chavyleung/qmkg/qmkg.cookie.js
+
+# 合创 cookie
+^https:\/\/wxprdapplet\.gac-nio\.com\/community\/userSignIn\/simpleAuth\/front\/v3\.1\.3\.5\/signV2$ url script-request-header chavyleung/hycan/hycan.cookie.js
+
+# 蔚来 cookie
+^https:\/\/app\.nio\.com\/api\/1\/app\/daily_checkin url script-request-header chavyleung/nio/nio.cookie.js
+
+# 京东到家 cookie
+^https:\/\/daojia.jd.com/client(.*?)functionId=signin(.*?)userSigninNew url script-request-body chavyleung/jddj/jddj.cookie.js
+
+# 网易考拉 cookie
+^https:\/\/m-bean\.kaola\.com/m/point/sign\.html url script-request-body chavyleung/wykl/wykl.cookie.js
+
+# WPS cookie
+^https:\/\/zt.wps.cn\/2018\/docer_check_in\/api\/act_list url script-request-header chavyleung/wps/wps.cookie.js
+
+# 智行火车 cookie
+^https:\/\/m\.ctrip\.com/restapi/soa2/14593/json/attendanceDay? url script-request-body chavyleung/zxhc/zxhc.cookie.js
+
+# 苏宁易购 cookie
+^https:\/\/passport.suning.com\/ids\/login$ url script-request-body chavyleung/suning/suning.cookie.js
+^https:\/\/luckman.suning.com\/luck-web\/sign\/api\/clock_sign.do url script-request-header chavyleung/suning/suning.cookie.js
+^https:\/\/sign.suning.com\/sign-web\/m\/promotion\/sign\/doSign.do url script-request-header chavyleung/suning/suning.cookie.js
+^https:\/\/gameapi.suning.com\/sngame-web\/(api\/signin\/private\/customerSignOperation.do|gateway\/api\/queryPrize.do) url script-request-header chavyleung/suning/suning.cookie.js
+
+# 豆瓣时间 cookie
+^https:\/\/fro\.douban\.com\/api\/v2\/niffler\/check_in\/status url script-request-header chavyleung/dbsj/dbsj.cookie.js
+
+# 趣头条 cookie
+^https:\/\/api\.1sapp\.com\/sign\/info? url script-request-header chavyleung/qtt/qtt.cookie.js
+^https:\/\/api\.1sapp\.com\/content\/readV2? url script-request-header chavyleung/qtt/qtt.cookie.js
+^https:\/\/api\.1sapp\.com\/x\/feed\/getReward? url script-request-header chavyleung/qtt/qtt.cookie.js
+
+# 米读 cookie
+^https:\/\/apiwz\.midukanshu\.com url script-request-body chavyleung/midu/midu.cookie.js
+
+# 京东 cookie
+https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean url script-request-header NobyDa/JD-DailyBonus/JD_DailyBonus.js
+
+# 爱奇艺 cookie
+^https?:\/\/iface(\d)?\.iqiyi\.com\/ url script-request-header NobyDa/iQIYI-DailyBonus/iQIYI.js
+
+# 哔哩哔哩漫画 Get cookie
+^https:\/\/passport\.biligame\.com\/api\/login\/sso.+?version%22%3A%22(3|4|5) url script-request-header NobyDa/Bilibili-DailyBonus/Manga.js
+
+# 百度贴吧 cookie
+https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login url script-request-header NobyDa/BDTieBa-DailyBonus/TieBa.js
+
+# 吾爱破解 cookie
+https:\/\/www\.52pojie\.cn\/home\.php\?mod=space url script-request-header NobyDa/52pojie-DailyBonus/52pojie.js
+
+# 快看漫画 cookie
+^https:\/\/api\.kkmh\.com\/v\d\/passport\/user url script-request-header NobyDa/KuaiKan-DailyBonus/KKMH.js
+
+# 115 cookie
+^https?:\/\/proapi\.115\.com\/ios\/user\/takespc\? url script-request-header zZPiglet/115/115.js
+
+# 便利蜂 cookie
+^https:\/\/h5\.bianlifeng\.com\/meepo\/taskCenter\/home\/v\d url script-request-header zZPiglet/Blibee/Blibee.js
+
+# 滴滴出行 cookie
+^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? url script-request-header zZPiglet/DiDi/DiDi_new.js
+^https:\/\/common\.diditaxi\.com\.cn\/webapp\/config\/sidebar\? url script-request-header zZPiglet/DiDi/DiDi_new.js
+
+# 达美乐 cookie
+^https?:\/\/dominos0724\.shjimang\.com\/Ajax\/GetSmsCode url script-request-body zZPiglet/Domino/Domino_getSMS.js
+^https?:\/\/dominos\d{4}\.shjimang\.com\/Ajax\/GetSmsCode url script-request-body zZPiglet/Domino/Domino_getSMS.js
+^https?:\/\/dominos\d{4}\.shjimang\.com\/ajax\/getgiftD url script-request-body zZPiglet/Domino/Domino_getGift.js
+
+# 海底捞 cookie
+^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow url script-request-body zZPiglet/Haidilao/Haidilao.js
+^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo url script-request-header zZPiglet/Haidilao/Haidilao.js
+
+# 电影日历 cookie
+^https:\/\/frodo\.douban\.com\/api\/v\d\/calendar\/today url script-request-header zZPiglet/MovieCalendar/MovieCalendar.js
+
+# 奈雪 cookie
+^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene url script-request-header zZPiglet/Naixue/Naixue.js
+
+# 欧可林 cookie
+^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$ url script-request-header zZPiglet/Oclean/Oclean.js
+
+# 微博通知 cookie
+^https:\/\/m\.weibo\.cn\/feed\/ url script-request-header zZPiglet/Weibo/Weibo.js  
+
+# 掌门好老师 cookie
+^https:\/\/teacherapi\.zmlearn\.com\/v1\/teacherApp\/app\/points\/taskCenter url script-request-header zZPiglet/ZMTeacher/ZMTeacher.js
+
+# 饿了么-打卡领红包 cookie
+^https:\/\/h5\.ele\.me\/restapi\/eus\/v\d\/current_user$ url script-request-header songyangzz/elem/elemGetCookies.js
+
+# 小黑盒 cookie
+^https:\/\/api\.xiaoheihe\.cn\/account\/home_v\d\/\? url script-request-header zZPiglet/heybox/heybox.js
+
+# 航旅纵横 cookie
+^https:\/\/cloud\.umetrip\.com\/gateway\/api\/web\/rest\/polite\/app\/sign\/signpageinitdata url script-request-header zZPiglet/umetrip/umetrip.js
+
+# 陌陌极速版签到 cookie
+https:\/\/mk\.immomo\.com\/activity\/fastsign\/index\/signIn? url script-request-body wangdelu2020/momosign.js
+
+# 趣走签到 cookie
+https:\/\/mobile01\.91quzou\.com\/rebate\/qz\/task\/homeTaskView\.do url script-request-header wangdelu2020/quwalk2.2.js
+
+# 惠头条 cookie
+https:\/\/api\.cashtoutiao\.com url script-request-body wangdelu2020/htt_cookie.js
+
+# 趣看天下 cookie
+https:\/\/(appv8\.qukantianxia\.com|appv7\.qukantx\.com) url script-request-header wangdelu2020/qktx_cookie.js
+
+# 微信小程序打卡签到 cookie
+https:\/\/(www\.baimaa\.com|www\.2xtj7\.cn|www\.hnmiaosu\.cc|ph0001\.hezyq\.com|wq\.02gk\.com|dk\.ne72\.com)\/app\/index\.php? url script-request-header wangdelu2020/wxdaka.js
+
+# 联通流量话费提醒 cookie
+https:\/\/m.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm? url script-request-header wangdelu2020/liantongnotice.js
+
+# 新浪微博超话签到 cookie
+https:\/\/m\.weibo\.cn\/api\/config url script-request-header wangdelu2020/newsinachaohua.js
+
+# 无忧行 cookie
+https?:\/\/app.*\.jegotrip\.com\.cn\/.*getUser\? url script-response-body https://ooxx.be/js/jegotrip.js
+https?:\/\/task\.jegotrip\.com\.cn\:8080\/app\/tasks\?userid url script-response-body https://ooxx.be/js/jegotrip.js
+
+# 猫眼电影 cookie
+http:\/\/api\.meituan\.com\/mmdb\/.*coming.json? url script-request-header https://ooxx.be/js/maoyan.js
+
+# 优麦医生 cookie
+https?:\/\/api\.umer\.com\.cn\/.*getCurrentUmerSign url script-request-header https://ooxx.be/js/umer.js
+
+# 饿了么 cookie
+^https:\/\/h5\.ele\.me\/restapi\/eus\/v\d\/current_user$ url script-request-header songyangzz/elem/elemGetCookies.js
+
+# 途虎养车 cookie
+https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo url script-request-header photonmang/tuhu/tuhu.Cookie.js
+
+# 云闪付 cookie
+https://youhui.95516.com/newsign/api/coin_details url script-request-header passerby-b/unipay.js
+
+# QQ萌宠 cookie 
+https:\/\/qqpet.jwetech.com\/api\/authorizations url script-response-body lowking/QQPet/lkQQPet.js
+
+# qq会员成长值 cookie
+https:\/\/proxy.vac.qq.com\/cgi-bin\/srfentry.fcgi? url script-request-header lowking/QQVip/qqVipCheckIn.js
+
+# 梨涡签到领现金 cookie
+https:\/\/api\.m\.jd\.com\/api\/v1\/sign\/doSign url script-request-body iisams/liwo/7dayscookie.js
+
+# 伊利乳品 cookie
+https:\/\/club\.yili\.com\/MALLIFChe\/MCSWSIAPI\.asmx\/Call url script-request-body id77/task/yiLi.cookie.js
+
+# 太好购 cookie
+^https:\/\/cxdng\.cpic\.com\.cn\/taieshop\/api\/CustomerFansInfo\/GetFansInfo url script-request-header id77/task/thg.cookie.js
+
+# 网易游戏会员签到 cookie
+^https:\/\/huiyuan\.163\.com\/jf\-mall\-api\/api\/sign_up\/(lucky|normal) url script-request-header id77/task/163GameVip.cookie.js
+
+# geekhub cookie
+^https:\/\/(www\.)?geekhub\.com\/checkins\/start url script-request-header id77/task/geekhub.cookie.js
+
+# 微博超话 cookie
+^https?://m?api\.weibo\.c(n|om)\/2\/(cardlist|page\/button|page) url script-request-header evilbutcher/check_in/weibo/weibotalk.cookie.js
+
+# Funboat cookie
+https:\/\/h5\.youzan\.com\/wscump\/checkin\/checkin url script-request-header evilbutcher/check_in/funboat/funboat.js
+https:\/\/h5\.youzan\.com\/wscuser\/membercenter\/stats url script-request-header evilbutcher/check_in/funboat/funboat.js
+
+# 九木杂物社 cookie
+https:\/\/wxavip\-up\.ezrpro\.cn\/Vip\/SignIn\/SignIn url script-request-body evilbutcher/check_in/jiumu/jiumu.js
+
+# 必要 cookie
+^https:\/\/apiplus\.biyao\.com\/signIn\/getSigneRoutineV4\.do* url script-request-header dompling/biyao/biyao.cookie.js
+^https:\/\/apiplus\.biyao\.com\/user\/authorLogin.do* url script-response-body dompling/biyao/biyao.cookie.js
+
+# 小米有品 cookie
+^https:\/\/m\.xiaomiyoupin\.com\/api\/auth\/login\/isloggedin url script-request-header dompling/xiaomiyp/xiaomiyp.js
+
+# 洋码头 cookie
+^https:\/\/app\.ymatou\.com\/api\/trading\/scartprodnum url script-request-header dompling/ymatou/ymatou.js
+
+# 时代天使 cookie
+^https:\/\/exp.angelalign.com\/api\/v1\/mini_program\/get_plan_list url script-request-header chouchoui/Scripts/angelalign/angelalign.cookie.js
+
+# NGA刮墙 cookie
+^https:\/\/ngabbs.com\/nuke.php\?? url script-request-body chouchoui/Scripts/nga/nga.cookie.js
+
+# 携程 cookie
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo url script-request-header barrym-chen/ctrip/ctrip_cookie.js
+
+# 携程小程序 cookie
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/16575\/signin url script-request-body barrym-chen/ctrip_wx/ct_cookie.js
+
+# 艺龙酒店 cookie
+^https:\/\/m\.elong\.com\/my\/rafflemileagejson\/getRaffleMileageTodayCount url script-request-header barrym-chen/elong/elong_draw_cookis.js
+
+# 飞常准 cookie
+^https:\/\/activity\.m\.duiba\.com\.cn\/signactivity\/getSignInfo? url script-request-header barrym-chen/fcz/fcz_cookie.js
+
+# 工银e生活 cookie
+^https:\/\/icbc1\.wlphp\.com:8444\/js\/api\/index\/signIn url script-request-body barrym-chen/icbc/icbc_cookie.js
+
+# 京东成长分 cookie
+^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/queryUserSignFlow url script-request-header barrym-chen/jdczf/jdczf_cookie.js
+
+# 同程小程序 cookie
+^https:\/\/wx\.17u\.cn\/wcsign\/sign\/GetSignInfo url script-request-body barrym-chen/tongc/tongc_cookie.js
+
+# 电视家 cookie
+http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin url script-request-header Sunert/Task/dianshijia.js
+http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal url script-request-header Sunert/Task/dianshijia.js
+
+# 京东到家 cookie
+https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin url script-request-header Sunert/Task/jddj.js
+
+# 快手极速版 cookie
+http:\/\/uploads2\.gifshow\.com\/rest\/n\/system\/speed url script-request-header Sunert/Task/kuaishou.js
+https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? url script-request-header Sunert/Task/kuaishou.js
+
+# 来客有礼 cookie
+https:\/\/draw\.jdfcloud\.com\/\/api\/bean\/square\/silverBean\/task\/get\? url script-request-header Sunert/Task/lkyl.js
+
+# 数码之家 cookie
+https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao url script-request-header Sunert/Task/mydigit.js
+
+# 新浪新闻 cookie
+https:\/\/newsapi\.sina\.cn\/\?resource=hbpage&newsId=HB-1-sina_gold_center url script-request-header Sunert/Task/sinanews.js
+https:\/\/newsapi\.sina\.cn\/\?resource=userpoint\/signIn url script-request-header Sunert/Task/sinanews.js
+
+# 中国电信套餐 cookie
+^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do url script-request-header Sunert/Task/telecomInfinity.js
+
+# 腾讯新闻 cookie
+https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? url script-request-body Sunert/Task/txnews.js
+
+# 微博 cookie
+https:\/\/api\.weibo\.cn\/\d\/page\/\w+\?gsid url script-request-header Sunert/Task/weibo.js
+https:\/\/pay\.sc\.weibo\.com\/aj\/mobile\/home\/welfare\/signin\/do\? url script-request-header Sunert/Task/weibo.js
+
+# 中青看点浏览赚任务 cookie
+https:\/\/ios\.baertt\.com\/v5\/task\/browse_(start|end)\.json url script-request-body Sunert/Task/youth_gain.js
+
+# 聚看点 cookie
+https:\/\/www\.xiaodouzhuan\.cn\/jkd\/newMobileMenu\/infoMe\.action url script-request-body Sunert/Task/jukan.js
+
+# 彩云天气
+https:\/\/((weather-data\.apple)|(api.weather))\.com url script-request-header Peng-YM/Tasks/caiyun.js
+
+# QQ阅读 cookie
+^https:\/\/(commontgw6|eventv3)\.reader\.qq\.com\/* url script-request-header DD-D1/QQReadSign.js   
+
+# 海德汇一城 cookie
+^https:\/\/wox2019\.woxshare\.com\/* url script-request-body DD-D1/hdhycSign.js  
+
+# 京东读书签到 cookie
+^https:\/\/jdread-api\.jd\.com\/* url script-request-header DD-D1/jddsSign.js   
+
+# 民盈国贸城 cookie
+^https:\/\/appsmall\.rtmap\.com\/* url script-request-body DD-D1/mygmcSign.js 
+
+# 汽车之家极速版 cookie
+^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* url script-request-body DD-D1/qczjSign.js
+^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* url script-request-body DD-D1/qczjSign.js
+
+# 趣客有礼 cookie
+^https:\/\/choujiang-server\.deering\.cn\/* url script-request-body DD-D1/qkylck.js
+
+# 水滴筹保险商城小程序 cookie
+^https:\/\/api\.sdbao\.com\/* url script-request-body DD-D1/sdcbxscSign.js
+
+# 水晶DJ cookie
+^http:\/\/app\.oscaches\.com\/* url script-request-body DD-D1/sjdjSign.js
+
+# 天天挖矿小程序 cookie
+^https:\/\/operation-api\.jimistore\.com\/* url script-request-body DD-D1/ttwbxcxSign.js
+
+# 微商星球 cookie
+^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* url script-request-body DD-D1/wsxqSign.js
+
+# 柚子快报 cookie
+^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* url script-request-body DD-D1/yzkbSign.js   
+
+# 追书畅读版 cookie
+^https:\/\/.+zhuishushenqi\.com\/* url script-request-body DD-D1/zscdbSign.js
+
+# 知音漫客 cookie
+^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* url script-request-body DD-D1/zymkSign.js
+# 华住会 cookie
+https:\/\/newactivity\.huazhu\.com\/v1\/pointStore\/signIn url script-request-body evilbutcher/check_in/hzh/hzh.js
