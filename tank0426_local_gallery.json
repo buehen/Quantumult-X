@@ -69,7 +69,7 @@
 "25 8 * * * NobyDa/KuaiKan-DailyBonus/KKMH.js, tag=快看漫画签到, img-url=https://raw.githubusercontent.com/Orz-3/task/master/KuaiKan.png",
 "1 0 * * * zZPiglet/115/115.js, tag=115, img-url=https://raw.githubusercontent.com/Orz-3/task/master/115.png",
 "1 0 * * * zZPiglet/Blibee/Blibee.js, tag=便利蜂, img-url=https://raw.githubusercontent.com/Orz-3/task/master/Blibee.png",
-"0 1,20 * * * zZPiglet/DiDi/DiDi_new.js, tag=滴滴出行, img-url=https://raw.githubusercontent.com/Orz-3/task/master/didi.png",
+"0 1,20 * * * jdscripts/didi/didi.js, tag=滴滴出行, img-url=https://raw.githubusercontent.com/Orz-3/task/master/didi.png",
 "0 0 * * * zZPiglet/Domino/Domino_getSMS.js, tag=达美乐, img-url=https://raw.githubusercontent.com/Orz-3/task/master/Domino.png",
 "0 0 * * * zZPiglet/Domino/Domino_getGift.js, tag=达美乐, img-url=https://raw.githubusercontent.com/Orz-3/task/master/Domino.png",
 "1 0 * * * zZPiglet/Haidilao/Haidilao.js, tag=海底捞, img-url=https://raw.githubusercontent.com/Orz-3/task/master/haidilao.png",
